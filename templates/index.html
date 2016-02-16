@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+</head>
+<body>
+    <div class='container'>
+        <div class='row'>
+            <h1>Please register!</h1>
+
+            <form action='/register' method='post' class='col s12'>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input type='text' name='email'></input>
+                        <label>Email</label>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='input-field col s6'>
+                        <input type='text' name='first_name'></input>
+                        <label>First Name</label>
+                    </div>
+
+                    <div class='input-field col s6'>
+                        <input type='text' name='last_name'></input>
+                        <label>Last Name</label>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input type='password' name='password'></input>
+                        <label>Password</label>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input type='password' name='confirm_pw'></input>                    
+                        <label>Confirm Password</label>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='col s12'>
+                        <label>Birthdate</label>
+                        <input type='date' name='birthdate'></input>
+                    </div>
+                </div>
+
+                <button class='btn'>Register!</button>
+            </form>
+
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+    </div>
+</body>
+</html>
